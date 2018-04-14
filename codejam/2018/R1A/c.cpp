@@ -8,11 +8,11 @@ using namespace std;
 
 int main ()
 {
-    int T, N,P;
+    int T, N,P0, P1;
     int tmp;
-    int H;
-    int W;
-    double min,max;
+    int H, W;
+    double min[101];
+    double max[101];
 
     cout.precision(8);
 
@@ -20,28 +20,29 @@ int main ()
 
     for( int Case = 1 ; Case <= T ; Case ++ )
     {
-        cin >> N >> P ;
+        cin >> N >> P0 ;
+        P1 = P0;
 
-        min = 0.0;
-        max = 0.0;
         for( int i = 0 ; i < N ; i++ )
         {
             cin >> H >> W;
-            min += H + H + W + W;
-            tmp = (H*H) + (W*W);
-            max += sqrt(tmp)*2;
+            P1 -= H + H + W + W;
+            min[i] = ( H > W ? W : H )*2;
+            max[i] = sqrt( (H*H) + (W*W) )*2 ;
         }
 
-        max += min;
-
-        if( max < (double)P )
+        
+        // ...
+        
+        
+        if( .. )
         {
             cout << "Case #" << Case << ": " << max << "\n";
             continue;
         }
         else
         {
-            cout << "Case #" << Case << ": " << (double)P << "\n";
+            cout << "Case #" << Case << ": " << P0 << "\n";
         }
     }
     return 0;
