@@ -17,7 +17,6 @@ int main()
     long long int input,sum;
 
     cout << "Input Number : " ;
-
     cin >> input;
 
     sum =  sumUnderMultiples(input,5) + sumUnderMultiples(input,3) - sumUnderMultiples(input , 15);
